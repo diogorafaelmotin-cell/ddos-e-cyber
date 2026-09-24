@@ -1,31 +1,611 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>DDoS e Cyber - Defesa</title>
-<link rel="stylesheet" href="theme.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber e ddos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Poppins', 'system-ui', 'sans-serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+
+  </script>
+  <style>
+    :root {
+      --primary: #00BFFF;
+      --primary-glow: rgba(0, 191, 255, 0.35);
+      --bg: #0a0a0a;
+      --bg-secondary: #111111;
+      --surface: #161616;
+      --surface-hover: #1e1e1e;
+      --text: #f1f1f1;
+      --text-muted: #777777;
+      --border: #2a2a2a;
+      --radius: 14px;
+      --success: #00FF88;
+      --warning: #FFD700;
+      --danger: #ff4444;
+    }
+
+    html.light {
+      --bg: #f2f4f6;
+      --bg-secondary: #e8eaed;
+      --surface: #ffffff;
+      --surface-hover: #f8f9fa;
+      --text: #0a0a0a;
+      --text-muted: #555555;
+      --border: #d1d5db;
+      --primary-glow: rgba(0, 191, 255, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.35s ease, color 0.35s ease;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Poppins', system-ui, sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    .neon-text {
+      text-shadow: 0 0 12px var(--primary-glow), 0 0 24px var(--primary-glow);
+    }
+
+    .neon-border {
+      box-shadow: 0 0 0 1px var(--border), 0 0 20px var(--primary-glow);
+    }
+
+    .view {
+      display: none;
+      min-height: 100vh;
+    }
+
+    .view.active {
+      display: block;
+    }
+
+    .app-layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 270px;
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      inset: 0 auto 0 0;
+      z-index: 50;
+      transition: transform 0.3s ease, background 0.35s;
+    }
+
+    .main-content {
+      flex: 1;
+      margin-left: 270px;
+      min-height: 100vh;
+      transition: margin 0.3s;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.8rem 1.1rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: var(--radius);
+      margin: 0.15rem 0.6rem;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+    }
+
+    .nav-item:hover {
+      background: var(--surface);
+      color: var(--primary);
+    }
+
+    .nav-item.active {
+      background: var(--primary)/8;
+      color: var(--primary);
+      border-color: var(--primary)/20;
+      background: color-mix(in srgb, var(--primary) 8%, transparent);
+    }
+
+    .section-content {
+      display: none;
+      animation: fadeIn 0.45s ease;
+    }
+
+    .section-content.active {
+      display: block;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #000;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--primary-glow);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: color-mix(in srgb, var(--primary) 5%, transparent);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .card:hover {
+      border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    html.light .card:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    .input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+      outline: none;
+    }
+
+    .input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 48px;
+      height: 26px;
+      border-radius: 13px;
+      background: var(--border);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      transition: transform 0.3s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .toggle-switch.on {
+      background: var(--primary);
+    }
+
+    .toggle-switch.on::after {
+      transform: translateX(22px);
+    }
+
+    .color-swatch {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .color-swatch:hover {
+      transform: scale(1.1);
+    }
+
+    .color-swatch.active {
+      border-color: var(--text);
+      box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--text);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        opacity: 0.6;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .animate-float {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .animate-float-delayed {
+      animation: float 5s ease-in-out infinite;
+      animation-delay: 2.5s;
+    }
+
+    .animate-pulse-glow {
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
+
+    .progress-ring-circle {
+      transition: stroke-dashoffset 0.6s ease;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 40;
+    }
+
+    .overlay.open {
+      display: block;
+    }
+
+    /* Certificate */
+    .certificate-frame {
+      background: linear-gradient(160deg, #fffdf5 0%, #ffffff 60%, #fffdf5 100%);
+      border: 10px solid var(--primary);
+      padding: 3.5rem 3rem;
+      text-align: center;
+      position: relative;
+      border-radius: 4px;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #1a1a1a;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .certificate-frame::before {
+      content: '';
+      position: absolute;
+      inset: 10px;
+      border: 2px solid var(--primary);
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    .certificate-seal {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 4px double var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      background: #fff;
+    }
+
+    /* Quiz option selected states */
+    .quiz-option {
+      transition: all 0.2s;
+    }
+
+    .quiz-option.correct {
+      border-color: var(--success) !important;
+      background: color-mix(in srgb, var(--success) 10%, transparent) !important;
+    }
+
+    .quiz-option.wrong {
+      border-color: var(--danger) !important;
+      background: color-mix(in srgb, var(--danger) 10%, transparent) !important;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding: 1.25rem;
+        padding-top: 5rem;
+      }
+    }
+
+  </style>
 </head>
-<body>
-<header class="glow-box">
-<h1 class="glow-text">DDOS-E-CYBER</h1>
-<p>Projeto educacional sobre defesa cibernética</p>
-</header>
-<main>
-<section class="card reveal active">
-<h2>O que é DDoS?</h2>
-<p>Ataque que tenta derrubar um serviço com excesso de requisições. Objetivo deste projeto: entender e se defender.</p>
-</section>
-<section class="card reveal active">
-<h2>Como se Defender</h2>
-<ul>
-<li>✅ Usar CDN e WAF (Cloudflare, etc)</li>
-<li>✅ Ativar HTTPS e Rate Limit</li>
-<li>✅ Monitorar tráfego</li>
-<li>✅ Firewall configurado</li>
-</ul>
-</section>
-<div class="status">🔒 Protegido com HTTPS via GitHub Pages</div>
-</main>
-</body>
-</html>
+
+<body class="antialiased">
+
+  <!-- ================= LOGIN ================= -->
+  <div id="view-login" class="view active relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-[10%] left-[15%] w-80 h-80 rounded-full opacity-[0.06] blur-3xl animate-float" style="background: var(--primary);"></div>
+      <div class="absolute bottom-[15%] right-[10%] w-72 h-72 rounded-full opacity-[0.05] blur-3xl animate-float-delayed" style="background: var(--primary);"></div>
+      <div class="absolute inset-0 opacity-[0.025]" style="background-image: linear-gradient(var(--primary) 1px, transparent 1px), linear-gradient(90deg, var(--primary) 1px, transparent 1px); background-size: 45px 45px;"></div>
+    </div>
+    <div class="min-h-screen flex items-center justify-center px-4 relative z-10">
+      <div class="w-full max-w-md">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--primary)]/10 border border-[var(--primary)]/20 mb-5 neon-border">
+            <i data-lucide="shield-check" class="w-8 h-8 text-[var(--primary)]"></i>
+          </div>
+          <h1 class="text-3xl font-bold font-heading mb-2" data-i18n="loginTitle">Bem-vindo de volta</h1>
+          <p class="text-[var(--text-muted)]" data-i18n="loginSubtitle">Entre na sua conta para continuar aprendendo</p>
+        </div>
+
+        <div class="card p-8">
+          <form id="login-form" class="space-y-5" onsubmit="handleLogin(event)">
+            <div>
+              <label class="block text-sm font-medium mb-2" data-i18n="email">E-mail</label>
+              <input type="email" id="login-email" required class="input" placeholder="aluno@email.com">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2" data-i18n="password">Senha</label>
+              <input type="password" id="login-password" required class="input" placeholder="••••••••">
+            </div>
+            <button type="submit" class="btn-primary w-full justify-center py-3 mt-2" data-i18n="loginBtn">Entrar</button>
+          </form>
+          <div class="mt-6 text-center text-sm text-[var(--text-muted)]">
+            <span data-i18n="noAccount">Não tem conta?</span>
+            <button onclick="switchAuth('register')" class="text-[var(--primary)] hover:underline ml-1 font-semibold" data-i18n="register">Cadastre-se</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= REGISTER ================= -->
+  <div id="view-register" class="view relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-[10%] left-[15%] w-80 h-80 rounded-full opacity-[0.06] blur-3xl animate-float" style="background: var(--primary);"></div>
+      <div class="absolute bottom-[15%] right-[10%] w-72 h-72 rounded-full opacity-[0.05] blur-3xl animate-float-delayed" style="background: var(--primary);"></div>
+      <div class="absolute inset-0 opacity-[0.025]" style="background-image: linear-gradient(var(--primary) 1px, transparent 1px), linear-gradient(90deg, var(--primary) 1px, transparent 1px); background-size: 45px 45px;"></div>
+    </div>
+    <div class="min-h-screen flex items-center justify-center px-4 py-12 relative z-10">
+      <div class="w-full max-w-md">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--primary)]/10 border border-[var(--primary)]/20 mb-5 neon-border">
+            <i data-lucide="user-plus" class="w-8 h-8 text-[var(--primary)]"></i>
+          </div>
+          <h1 class="text-3xl font-bold font-heading mb-2" data-i18n="registerTitle">Criar conta</h1>
+          <p class="text-[var(--text-muted)]" data-i18n="registerSubtitle">Comece sua jornada em cibersegurança</p>
+        </div>
+
+        <div class="card p-8">
+          <form id="register-form" class="space-y-5" onsubmit="handleRegister(event)">
+            <div>
+              <label class="block text-sm font-medium mb-2" data-i18n="name">Nome completo</label>
+              <input type="text" id="reg-name" required class="input" placeholder="João Silva">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2" data-i18n="email">E-mail</label>
+              <input type="email" id="reg-email" required class="input" placeholder="aluno@email.com">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2" data-i18n="password">Senha</label>
+              <input type="password" id="reg-password" required minlength="6" class="input" placeholder="Mínimo 6 caracteres">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2" data-i18n="confirmPassword">Confirmar senha</label>
+              <input type="password" id="reg-confirm" required class="input" placeholder="••••••••">
+            </div>
+            <button type="submit" class="btn-primary w-full justify-center py-3 mt-2" data-i18n="registerBtn">Criar conta</button>
+          </form>
+          <div class="mt-6 text-center text-sm text-[var(--text-muted)]">
+            <span data-i18n="hasAccount">Já tem conta?</span>
+            <button onclick="switchAuth('login')" class="text-[var(--primary)] hover:underline ml-1 font-semibold" data-i18n="login">Entrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= APP ================= -->
+  <div id="view-app" class="view">
+    <div class="app-layout">
+      <div id="mobile-overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+      <!-- Sidebar -->
+      <aside id="sidebar" class="sidebar">
+        <div class="p-5 flex-1 overflow-y-auto">
+          <div class="flex items-center gap-3 mb-8 px-2">
+            <div class="w-10 h-10 rounded-xl bg-[var(--primary)]/10 border border-[var(--primary)]/20 flex items-center justify-center">
+              <i data-lucide="shield-check" class="w-6 h-6 text-[var(--primary)]"></i>
+            </div>
+            <div>
+              <h1 class="font-bold text-base font-heading leading-tight tracking-tight">Cyberpulse</h1>
+              <p class="text-[10px] text-[var(--text-muted)] uppercase tracking-widest font-semibold">ddos</p>
+            </div>
+          </div>
+
+          <nav class="space-y-0.5 mb-6">
+            <a onclick="navigateTo('dashboard')" class="nav-item active" data-section="dashboard" id="nav-dashboard">
+              <i data-lucide="layout-dashboard" class="w-[18px] h-[18px]"></i>
+              <span data-i18n="dashboard">Dashboard</span>
+            </a>
+            <a onclick="navigateTo('module1')" class="nav-item" data-section="module1" id="nav-module1">
+              <i data-lucide="shield" class="w-[18px] h-[18px]"></i>
+              <span>Módulo 1</span>
+            </a>
+            <a onclick="navigateTo('module2')" class="nav-item" data-section="module2" id="nav-module2">
+              <i data-lucide="zap-off" class="w-[18px] h-[18px]"></i>
+              <span>Módulo 2</span>
+            </a>
+            <a onclick="navigateTo('module3')" class="nav-item" data-section="module3" id="nav-module3">
+              <i data-lucide="briefcase" class="w-[18px] h-[18px]"></i>
+              <span>Módulo 3</span>
+            </a>
+            <a onclick="navigateTo('module4')" class="nav-item" data-section="module4" id="nav-module4">
+              <i data-lucide="sword" class="w-[18px] h-[18px]"></i>
+              <span>Módulo 4</span>
+            </a>
+            <a onclick="navigateTo('module5')" class="nav-item" data-section="module5" id="nav-module5">
+              <i data-lucide="brain" class="w-[18px] h-[18px]"></i>
+              <span>Módulo 5</span>
+            </a>
+          </nav>
+
+          <div class="px-2 mb-2">
+            <p class="text-[10px] uppercase tracking-widest text-[var(--text-muted)] font-semibold ml-3 mb-1" data-i18n="settings">Configurações</p>
+          </div>
+          <nav class="space-y-0.5">
+            <a onclick="navigateTo('settings')" class="nav-item" data-section="settings" id="nav-settings">
+              <i data-lucide="settings" class="w-[18px] h-[18px]"></i>
+              <span data-i18n="settings">Configurações</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="p-4 border-t border-[var(--border)]">
+          <div class="flex items-center gap-3 p-2.5 rounded-xl bg-[var(--bg)] border border-[var(--border)] mb-3">
+            <img id="sidebar-avatar" src="" class="w-9 h-9 rounded-full object-cover border border-[var(--border)] bg-[var(--surface)]">
+            <div class="flex-1 min-w-0">
+              <p id="sidebar-name" class="text-sm font-semibold truncate">Usuário</p>
+              <p class="text-[11px] text-[var(--text-muted)] truncate">Estudante</p>
+            </div>
+          </div>
+          <button onclick="logout()" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-red-500/20 text-red-400 hover:bg-red-500/10 transition-colors text-sm font-medium">
+            <i data-lucide="log-out" class="w-4 h-4"></i>
+            <span data-i18n="logout">Sair</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Mobile Header -->
+        <div class="md:hidden flex items-center justify-between mb-6 sticky top-0 z-30 py-2 px-1">
+          <button onclick="toggleSidebar()" class="p-2.5 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[var(--text)]">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+          <span class="font-bold font-heading text-lg">CyberShield</span>
+          <div class="w-10"></div>
+        </div>
+
+        <!-- DASHBOARD -->
+        <section id="section-dashboard" class="section-content active max-w-6xl mx-auto">
+          <div class="mb-8">
+            <h2 class="text-sm font-semibold text-[var(--primary)] uppercase tracking-wider mb-1" data-i18n="welcomeBack">Bem-vindo de volta</h2>
+            <h1 class="text-3xl md:text-4xl font-bold font-heading mb-2"><span id="dash-welcome-name">Aluno</span></h1>
+            <p class="text-[var(--text-muted)]">Continue sua formação em defesa contra ataques DDoS.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="card flex items-center gap-5">
+              <div class="w-14 h-14 rounded-xl bg-[var(--primary)]/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="book-open" class="w-7 h-7 text-[var(--primary)]"></
