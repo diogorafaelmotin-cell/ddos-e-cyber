@@ -1,0 +1,83 @@
+:root {
+  --color-primary: #0ea5e9;
+  --color-primary-glow: rgba(14, 165, 233, 0.4);
+  --color-primary-contrast: #ffffff;
+  --color-bg: #020617;
+  --color-surface: #0f172a;
+  --color-surface-light: #1e293b;
+  --color-text: #f1f5f9;
+  --color-muted: #94a3b8;
+  --font-heading: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius: 1rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  font-family: var(--font-body);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px var(--color-primary-glow), 0 0 40px var(--color-primary-glow);
+}
+
+.glow-box {
+  box-shadow: 0 0 20px var(--color-primary-glow), 0 0 40px rgba(14, 165, 233, 0.1);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-pattern {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(14, 165, 233, 0.15) 1px, transparent 0);
+  background-size: 40px 40px;
+  }
