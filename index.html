@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyber e ddos</title>
+  <title>CyberShield Academy</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -528,8 +528,8 @@
               <i data-lucide="shield-check" class="w-6 h-6 text-[var(--primary)]"></i>
             </div>
             <div>
-              <h1 class="font-bold text-base font-heading leading-tight tracking-tight">Cyberpulse</h1>
-              <p class="text-[10px] text-[var(--text-muted)] uppercase tracking-widest font-semibold">ddos</p>
+              <h1 class="font-bold text-base font-heading leading-tight tracking-tight">CyberShield</h1>
+              <p class="text-[10px] text-[var(--text-muted)] uppercase tracking-widest font-semibold">Academy</p>
             </div>
           </div>
 
@@ -608,4 +608,1300 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             <div class="card flex items-center gap-5">
               <div class="w-14 h-14 rounded-xl bg-[var(--primary)]/10 flex items-center justify-center flex-shrink-0">
-                <i data-lucide="book-open" class="w-7 h-7 text-[var(--primary)]"></
+                <i data-lucide="book-open" class="w-7 h-7 text-[var(--primary)]"></i>
+              </div>
+              <div>
+                <p class="text-2xl font-bold font-heading">5</p>
+                <p class="text-sm text-[var(--text-muted)]">Módulos no curso</p>
+              </div>
+            </div>
+            <div class="card flex items-center gap-5">
+              <div class="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="check-circle" class="w-7 h-7 text-emerald-400"></i>
+              </div>
+              <div>
+                <p class="text-2xl font-bold font-heading" id="dash-completed">0</p>
+                <p class="text-sm text-[var(--text-muted)]">Módulos concluídos</p>
+              </div>
+            </div>
+            <div class="card flex items-center gap-5">
+              <div class="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="award" class="w-7 h-7 text-amber-400"></i>
+              </div>
+              <div>
+                <p class="text-2xl font-bold font-heading" id="dash-score">--</p>
+                <p class="text-sm text-[var(--text-muted)]">Pontuação no quiz</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Progress Circle -->
+            <div class="card lg:col-span-1 flex flex-col items-center justify-center text-center">
+              <div class="relative w-40 h-40 mb-4">
+                <svg class="w-full h-full" viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="52" fill="none" stroke="var(--border)" stroke-width="8" />
+                  <circle id="dash-progress-ring" cx="60" cy="60" r="52" fill="none" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" stroke-dasharray="326.73" stroke-dashoffset="326.73" class="progress-ring-circle" />
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span id="dash-progress-text" class="text-3xl font-bold font-heading">0%</span>
+                </div>
+              </div>
+              <h3 class="font-semibold mb-1">Progresso Geral</h3>
+              <p class="text-sm text-[var(--text-muted)]">Complete todos os módulos e o quiz.</p>
+            </div>
+
+            <!-- Module List -->
+            <div class="lg:col-span-2 space-y-4">
+              <h3 class="font-semibold text-lg mb-2">Trilha de Aprendizado</h3>
+              <div onclick="navigateTo('module1')" class="card p-5 flex items-center gap-4 cursor-pointer group">
+                <div class="w-12 h-12 rounded-xl bg-[var(--primary)]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--primary)]/20 transition-colors">
+                  <span class="font-bold text-[var(--primary)]">01</span>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold">Fundamentos de Cibersegurança</h4>
+                  <p class="text-sm text-[var(--text-muted)]">Conceitos, importância e pilares CIA.</p>
+                </div>
+                <div id="badge-module1" class="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--border)] text-[var(--text-muted)]">Pendente</div>
+              </div>
+              <div onclick="navigateTo('module2')" class="card p-5 flex items-center gap-4 cursor-pointer group">
+                <div class="w-12 h-12 rounded-xl bg-[var(--primary)]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--primary)]/20 transition-colors">
+                  <span class="font-bold text-[var(--primary)]">02</span>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold">Entendendo Ataques DDoS</h4>
+                  <p class="text-sm text-[var(--text-muted)]">O que são, analogias e tipos de ataque.</p>
+                </div>
+                <div id="badge-module2" class="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--border)] text-[var(--text-muted)]">Pendente</div>
+              </div>
+              <div onclick="navigateTo('module3')" class="card p-5 flex items-center gap-4 cursor-pointer group">
+                <div class="w-12 h-12 rounded-xl bg-[var(--primary)]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--primary)]/20 transition-colors">
+                  <span class="font-bold text-[var(--primary)]">03</span>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold">Caso DiCars Luxury</h4>
+                  <p class="text-sm text-[var(--text-muted)]">Estudo de defesa contra ataque real.</p>
+                </div>
+                <div id="badge-module3" class="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--border)] text-[var(--text-muted)]">Pendente</div>
+              </div>
+              <div onclick="navigateTo('module4')" class="card p-5 flex items-center gap-4 cursor-pointer group">
+                <div class="w-12 h-12 rounded-xl bg-[var(--primary)]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--primary)]/20 transition-colors">
+                  <span class="font-bold text-[var(--primary)]">04</span>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold">Estratégias de Defesa</h4>
+                  <p class="text-sm text-[var(--text-muted)]">CDN, WAF, Rate Limiting e monitoramento.</p>
+                </div>
+                <div id="badge-module4" class="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--border)] text-[var(--text-muted)]">Pendente</div>
+              </div>
+              <div onclick="navigateTo('module5')" class="card p-5 flex items-center gap-4 cursor-pointer group">
+                <div class="w-12 h-12 rounded-xl bg-[var(--primary)]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--primary)]/20 transition-colors">
+                  <span class="font-bold text-[var(--primary)]">05</span>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold">Quiz Final & Certificado</h4>
+                  <p class="text-sm text-[var(--text-muted)]">Teste seus conhecimentos.</p>
+                </div>
+                <div id="badge-module5" class="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--border)] text-[var(--text-muted)]">Pendente</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- MODULE 1 -->
+        <section id="section-module1" class="section-content max-w-5xl mx-auto">
+          <div class="mb-8">
+            <button onclick="navigateTo('dashboard')" class="text-sm text-[var(--text-muted)] hover:text-[var(--primary)] flex items-center gap-1 mb-4 transition-colors">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="backToDashboard">Voltar ao Dashboard</span>
+            </button>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-semibold mb-3">
+              <i data-lucide="shield" class="w-3 h-3"></i> MÓDULO 1
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold font-heading mb-3">O que é Cibersegurança?</h1>
+            <p class="text-[var(--text-muted)] text-lg">Conjunto de práticas, tecnologias e processos projetados para proteger redes, dispositivos, programas e dados contra ataques, danos ou acessos não autorizados.</p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-5 mb-10">
+            <div class="card">
+              <div class="w-11 h-11 rounded-lg bg-[var(--primary)]/10 flex items-center justify-center mb-4">
+                <i data-lucide="lock" class="w-5 h-5 text-[var(--primary)]"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Importância</h3>
+              <p class="text-[var(--text-muted)] text-sm leading-relaxed">Protege dados pessoais, financeiros e corporativos. Empresas perdem bilhões anualmente com vazamentos, tornando a segurança indispensável na economia digital.</p>
+            </div>
+            <div class="card">
+              <div class="w-11 h-11 rounded-lg bg-[var(--primary)]/10 flex items-center justify-center mb-4">
+                <i data-lucide="triangle" class="w-5 h-5 text-[var(--primary)]"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">A Triade CIA</h3>
+              <ul class="space-y-2 text-sm text-[var(--text-muted)]">
+                <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5 flex-shrink-0"></span><span><strong class="text-[var(--text)]">Confidencialidade:</strong> apenas autorizados acessam.</span></li>
+                <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5 flex-shrink-0"></span><span><strong class="text-[var(--text)]">Integridade:</strong> dados não são alterados indevidamente.</span></li>
+                <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5 flex-shrink-0"></span><span><strong class="text-[var(--text)]">Disponibilidade:</strong> sistemas acessíveis quando necessário.</span></li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="w-11 h-11 rounded-lg bg-[var(--primary)]/10 flex items-center justify-center mb-4">
+                <i data-lucide="users" class="w-5 h-5 text-[var(--primary)]"></i>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Confiança Digital</h3>
+              <p class="text-[var(--text-muted)] text-sm leading-relaxed">A segurança da informação constrói relações de confiança entre usuários e tecnologia, viabilizando comércio eletrônico, bancos e comunicações.</p>
+            </div>
+          </div>
+
+          <div class="card p-8 mb-8">
+            <h3 class="text-xl font-semibold mb-4">Crescimento dos Ataques Cibernéticos no Brasil</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+              <div class="p-4 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
+                <p class="text-2xl font-bold text-[var(--primary)]">45M</p>
+                <p class="text-xs text-[var(--text-muted)] mt-1">2017</p>
+              </div>
+              <div class="p-4 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
+                <p class="text-2xl font-bold text-[var(--primary)]">112M</p>
+                <p class="text-xs text-[var(--text-muted)] mt-1">2021</p>
+              </div>
+              <div class="p-4 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
+                <p class="text-2xl font-bold text-[var(--primary)]">203M</p>
+                <p class="text-xs text-[var(--text-muted)] mt-1">2023</p>
+              </div>
+              <div class="p-4 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
+                <p class="text-2xl font-bold text-[var(--primary)]">275M+</p>
+                <p class="text-xs text-[var(--text-muted)] mt-1">2024</p>
+              </div>
+            </div>
+            <p class="text-xs text-[var(--text-muted)] mt-4 text-center">Dados ilustrativos baseados em tendências de ameaças digitais.</p>
+          </div>
+        </section>
+
+        <!-- MODULE 2 -->
+        <section id="section-module2" class="section-content max-w-5xl mx-auto">
+          <div class="mb-8">
+            <button onclick="navigateTo('dashboard')" class="text-sm text-[var(--text-muted)] hover:text-[var(--primary)] flex items-center gap-1 mb-4 transition-colors">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="backToDashboard">Voltar ao Dashboard</span>
+            </button>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-semibold mb-3">
+              <i data-lucide="zap-off" class="w-3 h-3"></i> MÓDULO 2
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold font-heading mb-3">O que é um ataque DDoS?</h1>
+            <p class="text-[var(--text-muted)] text-lg"><strong class="text-[var(--text)]">Distributed Denial of Service</strong> (Negação de Serviço Distribuída) é um ataque que sobrecarrega um servidor com tráfego falso, tornando-o indisponível para usuários legítimos.</p>
+          </div>
+
+          <div class="card p-8 mb-8">
+            <div class="flex items-center gap-3 mb-5">
+              <i data-lucide="car" class="w-6 h-6 text-[var(--primary)]"></i>
+              <h3 class="text-xl font-semibold">Analogia: O Engarrafamento Digital</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+              <div class="space-y-4 text-[var(--text-muted)] leading-relaxed">
+                <p>Imagine uma <strong class="text-[var(--text)]">rodovia de 3 pistas</strong> que leva carros de forma organizada até um centro da cidade (o servidor).</p>
+                <p>Em um ataque DDoS, <strong class="text-[var(--text)]">milhares de carros fantasmas</strong> (requisições falsas) invadem todas as pistas ao mesmo tempo.</p>
+                <p>Os <strong class="text-[var(--text)]">motoristas reais</strong> (usuários legítimos) ficam presos no engarrafamento e nunca chegam ao destino.</p>
+              </div>
+              <div class="bg-[var(--bg)] rounded-xl p-6 border border-[var(--border)]">
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between text-sm mb-1">
+                    <span class="text-[var(--text-muted)]">Trafego Normal</span>
+                    <span class="text-[var(--primary)] font-semibold">120 req/s</span>
+                  </div>
+                  <div class="h-3 rounded-full bg-[var(--border)] overflow-hidden">
+                    <div class="h-full rounded-full bg-[var(--primary)]" style="width: 12%"></div>
+                  </div>
+                  <div class="flex items-center justify-between text-sm mb-1 mt-4">
+                    <span class="text-[var(--text-muted)]">Durante um Ataque DDoS</span>
+                    <span class="text-red-400 font-semibold">6.000 req/s</span>
+                  </div>
+                  <div class="h-3 rounded-full bg-[var(--border)] overflow-hidden">
+                    <div class="h-full rounded-full bg-red-400" style="width: 96%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold mb-4">Os 3 Tipos de Ataque DDoS</h3>
+          <div class="grid md:grid-cols-3 gap-5 mb-8">
+            <div class="card border-red-500/20">
+              <div class="w-11 h-11 rounded-lg bg-red-500/10 flex items-center justify-center mb-4">
+                <i data-lucide="volume-2" class="w-5 h-5 text-red-400"></i>
+              </div>
+              <h4 class="font-semibold mb-2">Volumétrico</h4>
+              <p class="text-sm text-[var(--text-muted)] leading-relaxed">Satura a largura de banda da rede com um volume massivo de tráfego malicioso, como inundações UDP. O objetivo é esgotar a capacidade do link de internet.</p>
+            </div>
+            <div class="card border-orange-500/20">
+              <div class="w-11 h-11 rounded-lg bg-orange-500/10 flex items-center justify-center mb-4">
+                <i data-lucide="server" class="w-5 h-5 text-orange-400"></i>
+              </div>
+              <h4 class="font-semibold mb-2">Protocolo</h4>
+              <p class="text-sm text-[var(--text-muted)] leading-relaxed">Explora vulnerabilidades nos protocolos de rede (TCP/IP), consumindo recursos dos servidores de origem e intermediários, como ataques SYN Flood.</p>
+            </div>
+            <div class="card border-yellow-500/20">
+              <div class="w-11 h-11 rounded-lg bg-yellow-500/10 flex items-center justify-center mb-4">
+                <i data-lucide="globe" class="w-5 h-5 text-yellow-400"></i>
+              </div>
+              <h4 class="font-semibold mb-2">Aplicação</h4>
+              <p class="text-sm text-[var(--text-muted)] leading-relaxed">Visa camadas específicas da aplicação web (camada 7), como HTTP. É o mais difícil de detectar porque se parece com tráfego legítimo.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-[var(--primary)]/5 border border-[var(--primary)]/20 flex items-start gap-3">
+            <i data-lucide="info" class="w-5 h-5 text-[var(--primary)] flex-shrink-0 mt-0.5"></i>
+            <p class="text-sm text-[var(--text-muted)]">Este conteúdo tem caráter exclusivamente educativo. O objetivo é ensinar <strong class="text-[var(--text)]">defesa e proteção</strong>, nunca como realizar ataques.</p>
+          </div>
+        </section>
+
+        <!-- MODULE 3 -->
+        <section id="section-module3" class="section-content max-w-5xl mx-auto">
+          <div class="mb-8">
+            <button onclick="navigateTo('dashboard')" class="text-sm text-[var(--text-muted)] hover:text-[var(--primary)] flex items-center gap-1 mb-4 transition-colors">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="backToDashboard">Voltar ao Dashboard</span>
+            </button>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold mb-3">
+              <i data-lucide="briefcase" class="w-3 h-3"></i> MÓDULO 3
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold font-heading mb-3">Caso DiCars Luxury</h1>
+            <p class="text-[var(--text-muted)] text-lg">Como uma empresa de carros de luxo detectou e neutralizou um ataque DDoS em tempo recorde, mantendo suas operações online.</p>
+          </div>
+
+          <div class="card p-8 mb-8">
+            <h3 class="text-lg font-semibold mb-4">Pico Anormal de Acessos: 50x acima do normal</h3>
+            <div class="bg-[var(--bg)] rounded-xl p-6 border border-[var(--border)]">
+              <div class="flex items-end justify-between h-40 gap-2 md:gap-3">
+                <div class="flex-1 flex flex-col items-center gap-2">
+                  <div class="w-full bg-[var(--primary)]/60 rounded-t-md" style="height: 25%"></div><span class="text-[10px] text-[var(--text-muted)]">13:50</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center gap-2">
+                  <div class="w-full bg-[var(--primary)]/60 rounded-t-md" style="height: 30%"></div><span class="text-[10px] text-[var(--text-muted)]">14:00</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center gap-2">
+                  <div class="w-full bg-[var(--primary)]/60 rounded-t-md" style="height: 28%"></div><span class="text-[10px] text-[var(--text-muted)]">14:10</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center gap-2">
+                  <div class="w-full bg-[var(--primary)]/60 rounded-t-md" style="height: 32%"></div><span class="text-[10px] text-[var(--text-muted)]">14:15</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center gap-2">
+                  <div class="w-full bg-red-400 rounded-t-md" style="height: 100%"></div><span class="text-[10px] text-red-400 font-semibold">14:20</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center gap-2">
+                  <div class="w-full bg-red-400 rounded-t-md" style="height: 95%"></div><span class="text-[10px] text-red-400 font-semibold">14:25</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center gap-2">
+                  <div class="w-full bg-[var(--primary)]/60 rounded-t-md" style="height: 35%"></div><span class="text-[10px] text-[var(--text-muted)]">14:30</span>
+                </div>
+                <div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-[var(--primary)]/60 rounded-t-md" style="height: 27%"></div><span class="text-[10px] text-[var(--text-muted)]">14:40</span>
+                </div>
+              </div>
+            </div>
+            <p class="text-xs text-[var(--text-muted)] mt-3 text-center">Gráfico ilustrativo de requisições por segundo no momento do ataque.</p>
+          </div>
+
+          <div class="relative">
+            <div class="absolute left-6 top-0 bottom-0 w-px bg-[var(--border)] md:left-1/2 md:-translate-x-px"></div>
+            <div class="space-y-8">
+              <!-- Passo 1 -->
+              <div class="relative grid md:grid-cols-2 gap-8 items-center">
+                <div class="md:text-right">
+                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold mb-2">PASSO 1</div>
+                  <h3 class="text-lg font-semibold mb-2">Detecção Imediata</h3>
+                  <p class="text-sm text-[var(--text-muted)] leading-relaxed">O sistema de monitoramento identificou um pico de <strong class="text-[var(--text)]">50x o tráfego normal</strong> em apenas 3 minutos. Alertas automáticos foram disparados para o time de segurança.</p>
+                </div>
+                <div class="card relative md:ml-8">
+                  <div class="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[var(--primary)] border-4 border-[var(--bg-secondary)] z-10 hidden md:block"></div>
+                  <div class="flex items-center gap-3 mb-3">
+                    <i data-lucide="radar" class="w-5 h-5 text-[var(--primary)]"></i>
+                    <span class="text-sm font-semibold">Tempo de resposta: 2 min</span>
+                  </div>
+                  <p class="text-xs text-[var(--text-muted)]">Ferramentas de observabilidade capturaram o padrão anômalo e classificaram como ataque DDoS volumétrico.</p>
+                </div>
+              </div>
+              <!-- Passo 2 -->
+              <div class="relative grid md:grid-cols-2 gap-8 items-center">
+                <div class="md:order-2">
+                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold mb-2">PASSO 2</div>
+                  <h3 class="text-lg font-semibold mb-2">Ativação da Cloudflare</h3>
+                  <p class="text-sm text-[var(--text-muted)] leading-relaxed">A camada de CDN da Cloudflare foi ativada para absorver o impacto. O tráfego malicioso foi redirecionado e filtrado nos servidores edge globais antes de chegar à origem.</p>
+                </div>
+                <div class="card relative md:mr-8 md:text-right md:order-1">
+                  <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[var(--primary)] border-4 border-[var(--bg-secondary)] z-10 hidden md:block"></div>
+                  <div class="flex items-center gap-3 mb-3 md:justify-end">
+                    <i data-lucide="cloud" class="w-5 h-5 text-[var(--primary)]"></i>
+                    <span class="text-sm font-semibold">95% do tráfego bloqueado</span>
+                  </div>
+                  <p class="text-xs text-[var(--text-muted)]">A rede de 300+ data centers da Cloudflare dissipou o ataque geograficamente.</p>
+                </div>
+              </div>
+              <!-- Passo 3 -->
+              <div class="relative grid md:grid-cols-2 gap-8 items-center">
+                <div class="md:text-right">
+                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold mb-2">PASSO 3</div>
+                  <h3 class="text-lg font-semibold mb-2">Rate Limiting + WAF</h3>
+                  <p class="text-sm text-[var(--text-muted)] leading-relaxed">Rate limiting limitou requisições por IP. O WAF identificou e bloqueou padrões automatizados, permitindo apenas tráfego legítimo.</p>
+                </div>
+                <div class="card relative md:ml-8">
+                  <div class="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[var(--primary)] border-4 border-[var(--bg-secondary)] z-10 hidden md:block"></div>
+                  <div class="flex items-center gap-3 mb-3">
+                    <i data-lucide="sliders-horizontal" class="w-5 h-5 text-[var(--primary)]"></i>
+                    <span class="text-sm font-semibold">Padrões maliciosos filtrados</span>
+                  </div>
+                  <p class="text-xs text-[var(--text-muted)]">Regras customizadas bloquearam assinaturas de bots conhecidos e requisições fora de padrão.</p>
+                </div>
+              </div>
+              <!-- Passo 4 -->
+              <div class="relative grid md:grid-cols-2 gap-8 items-center">
+                <div class="md:order-2">
+                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold mb-2">PASSO 4</div>
+                  <h3 class="text-lg font-semibold mb-2">Monitoramento Contínuo</h3>
+                  <p class="text-sm text-[var(--text-muted)] leading-relaxed">A equipe manteve monitoramento 24/7 para garantir que nenhuma requisição legítima fosse bloqueada. O site permaneceu operando normalmente.</p>
+                </div>
+                <div class="card relative md:mr-8 md:text-right md:order-1">
+                  <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-emerald-400 border-4 border-[var(--bg-secondary)] z-10 hidden md:block"></div>
+                  <div class="flex items-center gap-3 mb-3 md:justify-end">
+                    <i data-lucide="activity" class="w-5 h-5 text-emerald-400"></i>
+                    <span class="text-sm font-semibold text-emerald-400">Zero downtime</span>
+                  </div>
+                  <p class="text-xs text-[var(--text-muted)]">Clientes não perceberam interrupção. A loja online manteve vendas ativas durante todo o incidente.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 flex justify-center">
+            <div class="inline-flex items-center gap-3 px-6 py-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+              <i data-lucide="trophy" class="w-6 h-6 text-emerald-400"></i>
+              <span class="text-emerald-400 font-semibold">Resultado: ataque completamente mitigado. Prejuízo zero.</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- MODULE 4 -->
+        <section id="section-module4" class="section-content max-w-5xl mx-auto">
+          <div class="mb-8">
+            <button onclick="navigateTo('dashboard')" class="text-sm text-[var(--text-muted)] hover:text-[var(--primary)] flex items-center gap-1 mb-4 transition-colors">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="backToDashboard">Voltar ao Dashboard</span>
+            </button>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-semibold mb-3">
+              <i data-lucide="sword" class="w-3 h-3"></i> MÓDULO 4
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold font-heading mb-3">Como se Defender?</h1>
+            <p class="text-[var(--text-muted)] text-lg">Seis estratégias práticas e eficientes para proteger servidores e aplicações contra ataques DDoS e outras ameaças cibernéticas.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="card">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-[var(--primary)]/10 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="network" class="w-5 h-5 text-[var(--primary)]"></i>
+                </div>
+                <span class="text-2xl font-bold text-[var(--primary)]/30 font-heading">01</span>
+              </div>
+              <h3 class="font-semibold mb-2">Usar CDN</h3>
+              <p class="text-sm text-[var(--text-muted)] leading-relaxed">Content Delivery Networks distribuem o tráfego por servidores globais, absorvendo picos e reduzindo a carga no servidor de origem.</p>
+            </div>
+            <div class="card">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-[var(--primary)]/10 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="flame" class="w-5 h-5 text-[var(--primary)]"></i>
+                </div>
+                <span class="text-2xl font-bold text-[var(--primary)]/30 font-heading">02</span>
+              </div>
+              <h3 class="font-semibold mb-2">Firewall & WAF</h3>
+              <p class="text-sm text-[var(--text-muted)] leading-relaxed">Firewalls filtram tráfego suspeito nas portas de rede. Um WAF adiciona proteção específica para camadas de aplicação web.</p>
+            </div>
+            <div class="card">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-[var(--primary)]/10 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="scale" class="w-5 h-5 text-[var(--primary)]"></i>
+                </div>
+                <span class="text-2xl font-bold text-[var(--primary)]/30 font-heading">03</span>
+              </div>
+              <h3 class="font-semibold mb-2">Balanceamento de Carga</h3>
+              <p class="text-sm text-[var(--text-muted)] leading-relaxed">Load balancers distribuem requisições entre vários servidores. Se um ficar sobrecarregado, os outros continuam operando.</p>
+            </div>
+            <div class="card">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-[var(--primary)]/10 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="eye" class="w-5 h-5 text-[var(--primary)]"></i>
+                </div>
+                <span class="text-2xl font-bold text-[var(--primary)]/30 font-heading">04</span>
+              </div>
+              <h3 class="font-semibold mb-2">Monitoramento 24/7</h3>
+              <p class="text-sm text-[var(--text-muted)] leading-relaxed">Ferramentas de monitoramento em tempo real alertam sobre picos anormais, permitindo resposta rápida antes da indisponibilidade.</p>
+            </div>
+            <div class="card">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-[var(--primary)]/10 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="gauge" class="w-5 h-5 text-[var(--primary)]"></i>
+                </div>
+                <span class="text-2xl font-bold text-[var(--primary)]/30 font-heading">05</span>
+              </div>
+              <h3 class="font-semibold mb-2">Rate Limiting</h3>
+              <p class="text-sm text-[var(--text-muted)] leading-relaxed">Limite o número de requisições que um único IP ou usuário pode fazer em um período, bloqueando abusos automatizados.</p>
+            </div>
+            <div class="card">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-[var(--primary)]/10 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="refresh-cw" class="w-5 h-5 text-[var(--primary)]"></i>
+                </div>
+                <span class="text-2xl font-bold text-[var(--primary)]/30 font-heading">06</span>
+              </div>
+              <h3 class="font-semibold mb-2">Atualizações Constantes</h3>
+              <p class="text-sm text-[var(--text-muted)] leading-relaxed">Patches de segurança corrigem vulnerabilidades exploradas por atacantes. Manter sistemas atualizados é a primeira linha de defesa.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- MODULE 5 - QUIZ -->
+        <section id="section-module5" class="section-content max-w-3xl mx-auto">
+          <div class="mb-8">
+            <button onclick="navigateTo('dashboard')" class="text-sm text-[var(--text-muted)] hover:text-[var(--primary)] flex items-center gap-1 mb-4 transition-colors">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="backToDashboard">Voltar ao Dashboard</span>
+            </button>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold mb-3">
+              <i data-lucide="brain" class="w-3 h-3"></i> MÓDULO 5
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold font-heading mb-3">Quiz Final</h1>
+            <p class="text-[var(--text-muted)] text-lg">Teste seus conhecimentos sobre defesa contra ataques DDoS. Acerte pelo menos 3 de 5 para obter o certificado.</p>
+          </div>
+
+          <div class="card p-8" id="quiz-card">
+            <div id="quiz-interface">
+              <div class="flex items-center justify-between mb-6">
+                <span class="text-sm font-semibold text-[var(--primary)]" id="quiz-progress-label">Pergunta 1 de 5</span>
+                <div class="flex gap-1" id="quiz-dots"></div>
+              </div>
+              <h3 class="text-xl font-semibold mb-6" id="quiz-question">Carregando...</h3>
+              <div class="space-y-3" id="quiz-options"></div>
+              <div id="quiz-feedback" class="hidden mt-5 p-4 rounded-xl border"></div>
+              <div class="mt-6 flex justify-end">
+                <button id="quiz-next-btn" class="btn-primary" style="display:none" onclick="nextQuestion()">
+                  <span>Próxima</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+
+            <div id="quiz-result" class="hidden text-center">
+              <div id="result-icon" class="mx-auto w-20 h-20 rounded-full flex items-center justify-center mb-5"></div>
+              <h3 class="text-3xl font-bold font-heading mb-2" id="result-title"></h3>
+              <p class="text-[var(--text-muted)] mb-6" id="result-message"></p>
+              <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <button onclick="restartQuiz()" class="btn-secondary justify-center">
+                  <i data-lucide="rotate-ccw" class="w-4 h-4"></i> <span data-i18n="tryAgain">Tentar novamente</span>
+                </button>
+                <button id="cert-btn" class="btn-primary justify-center" style="display:none" onclick="showCertificate()">
+                  <i data-lucide="award" class="w-4 h-4"></i> <span data-i18n="getCertificate">Obter Certificado</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CERTIFICATE -->
+        <section id="section-certificate" class="section-content max-w-4xl mx-auto">
+          <div class="mb-6">
+            <button onclick="navigateTo('dashboard')" class="text-sm text-[var(--text-muted)] hover:text-[var(--primary)] flex items-center gap-1 mb-4 transition-colors">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="backToDashboard">Voltar ao Dashboard</span>
+            </button>
+          </div>
+
+          <div class="certificate-frame" id="certificate-content">
+            <div class="certificate-seal mb-6">
+              <i data-lucide="shield-check" class="w-10 h-10 text-[var(--primary)]"></i>
+            </div>
+            <p class="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)] mb-2 font-semibold">CyberShield Academy</p>
+            <h2 class="text-4xl md:text-5xl font-bold font-heading mb-2" style="color: #0a0a0a;">Certificado</h2>
+            <h3 class="text-xl font-medium mb-8" style="color: #333;">de Conclusão</h3>
+            <p class="text-base mb-2" style="color: #444;">Certificamos que</p>
+            <p class="text-3xl font-bold font-heading my-4" style="color: #0a0a0a; border-bottom: 2px solid var(--primary); display: inline-block; padding: 0 1rem 0.5rem;"><span id="cert-name">Aluno</span></p>
+            <p class="text-base mt-6 mb-2" style="color: #444;">concluiu com êxito o curso</p>
+            <p class="text-xl font-semibold mb-8" style="color: #0a0a0a;">Cibersegurança: Defesa Contra Ataques DDoS</p>
+            <div class="flex justify-between items-center mt-12 pt-8" style="border-top: 1px solid #ddd;">
+              <div class="text-left">
+                <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-1">Data</p>
+                <p class="font-semibold" style="color: #0a0a0a;" id="cert-date">--</p>
+              </div>
+              <div class="text-center">
+                <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-1">Carga Horária</p>
+                <p class="font-semibold" style="color: #0a0a0a;">8 horas</p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-1">Pontuação</p>
+                <p class="font-semibold" style="color: #0a0a0a;" id="cert-score">--</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-center gap-3 mt-8">
+            <button onclick="window.print()" class="btn-primary">
+              <i data-lucide="printer" class="w-4 h-4"></i> <span data-i18n="print">Imprimir</span>
+            </button>
+            <button onclick="navigateTo('dashboard')" class="btn-secondary">
+              <i data-lucide="x" class="w-4 h-4"></i> <span data-i18n="close">Fechar</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- SETTINGS PANEL -->
+        <section id="section-settings" class="section-content max-w-3xl mx-auto">
+          <div class="mb-8">
+            <button onclick="navigateTo('dashboard')" class="text-sm text-[var(--text-muted)] hover:text-[var(--primary)] flex items-center gap-1 mb-4 transition-colors">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="backToDashboard">Voltar ao Dashboard</span>
+            </button>
+            <h1 class="text-3xl md:text-4xl font-bold font-heading mb-2" data-i18n="settings">Configurações</h1>
+            <p class="text-[var(--text-muted)]">Personalize sua experiência de aprendizado.</p>
+          </div>
+
+          <!-- Appearance -->
+          <div class="card p-6 mb-5">
+            <h3 class="font-semibold text-lg mb-5 flex items-center gap-2">
+              <i data-lucide="palette" class="w-5 h-5 text-[var(--primary)]"></i> Aparência
+            </h3>
+            <div class="space-y-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-medium" data-i18n="theme">Tema</p>
+                  <p class="text-sm text-[var(--text-muted)]">Escolha entre claro e escuro</p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i data-lucide="sun" class="w-4 h-4 text-[var(--text-muted)]"></i>
+                  <div class="toggle-switch" id="theme-toggle" onclick="toggleTheme()"></div>
+                  <i data-lucide="moon" class="w-4 h-4 text-[var(--text-muted)]"></i>
+                </div>
+              </div>
+              <div>
+                <p class="font-medium mb-3" data-i18n="accentColor">Cor de destaque</p>
+                <div class="flex gap-3">
+                  <button onclick="setAccent('#00BFFF')" class="color-swatch active" style="background:#00BFFF" data-color="#00BFFF" title="Azul Neon"></button>
+                  <button onclick="setAccent('#00FF88')" class="color-swatch" style="background:#00FF88" data-color="#00FF88" title="Verde"></button>
+                  <button onclick="setAccent('#B829DD')" class="color-swatch" style="background:#B829DD" data-color="#B829DD" title="Roxo"></button>
+           <button onclick="setAccent('#FFD700')" class="color-swatch" style="background:#FFD700" data-color="#FFD700" title="Dourado"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Language -->
+          <div class="card p-6 mb-5">
+            <h3 class="font-semibold text-lg mb-5 flex items-center gap-2">
+              <i data-lucide="languages" class="w-5 h-5 text-[var(--primary)]"></i> Idioma da Interface
+            </h3>
+            <div class="grid grid-cols-3 gap-3">
+              <button onclick="setLanguage('pt')" class="lang-btn px-4 py-3 rounded-xl border border-[var(--border)] text-sm font-medium transition-all text-center" data-lang="pt">Português</button>
+              <button onclick="setLanguage('en')" class="lang-btn px-4 py-3 rounded-xl border border-[var(--border)] text-sm font-medium transition-all text-center" data-lang="en">English</button>
+              <button onclick="setLanguage('es')" class="lang-btn px-4 py-3 rounded-xl border border-[var(--border)] text-sm font-medium transition-all text-center" data-lang="es">Español</button>
+            </div>
+            <p class="text-xs text-[var(--text-muted)] mt-3">A alteração de idioma afeta apenas menus e botões. O conteúdo educacional permanece em Português.</p>
+          </div>
+
+          <!-- Profile -->
+          <div class="card p-6 mb-5">
+            <h3 class="font-semibold text-lg mb-5 flex items-center gap-2">
+              <i data-lucide="user" class="w-5 h-5 text-[var(--primary)]"></i> Editar Perfil
+            </h3>
+            <form onsubmit="updateProfile(event)" class="space-y-5">
+              <div class="flex items-center gap-4">
+                <img id="settings-avatar" src="" class="w-16 h-16 rounded-full object-cover border-2 border-[var(--border)] bg-[var(--bg)]">
+                <div class="flex-1">
+                  <label class="block text-sm font-medium mb-1">URL da foto</label>
+                  <input type="url" id="settings-avatar-url" class="input text-sm" placeholder="https://..." oninput="previewAvatar(this.value)">
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Nome completo</label>
+                <input type="text" id="settings-name" required class="input">
+              </div>
+              <button type="submit" class="btn-primary">
+                <i data-lucide="save" class="w-4 h-4"></i> <span data-i18n="save">Salvar alterações</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Account -->
+          <div class="card p-6 border-red-500/20">
+            <h3 class="font-semibold text-lg mb-4 flex items-center gap-2 text-red-400">
+              <i data-lucide="alert-triangle" class="w-5 h-5"></i> Conta
+            </h3>
+            <p class="text-sm text-[var(--text-muted)] mb-4">Encerre sua sessão atual. Seus dados permanecem salvos neste dispositivo.</p>
+            <button onclick="logout()" class="px-5 py-2.5 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20 hover:bg-red-500/20 transition-colors font-medium text-sm flex items-center gap-2">
+              <i data-lucide="log-out" class="w-4 h-4"></i> <span data-i18n="logout">Sair da conta</span>
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    // ====== DATA & STORE ======
+    const STORAGE = {
+      USERS: 'cs_users',
+      SESSION: 'cs_session',
+      SETTINGS: 'cs_settings',
+      PROGRESS: 'cs_progress'
+    };
+
+    const ACCENTS = {
+      '#00BFFF': {
+        glow: 'rgba(0,191,255,0.35)'
+      },
+      '#00FF88': {
+        glow: 'rgba(0,255,136,0.35)'
+      },
+      '#B829DD': {
+        glow: 'rgba(184,41,221,0.35)'
+      },
+      '#FFD700': {
+        glow: 'rgba(255,215,0,0.35)'
+      }
+    };
+
+    const i18n = {
+      pt: {
+        loginTitle: 'Bem-vindo de volta',
+        loginSubtitle: 'Entre na sua conta para continuar aprendendo',
+        email: 'E-mail',
+        password: 'Senha',
+        loginBtn: 'Entrar',
+        noAccount: 'Não tem conta?',
+        register: 'Cadastre-se',
+        registerTitle: 'Criar conta',
+        registerSubtitle: 'Comece sua jornada em cibersegurança',
+        name: 'Nome completo',
+        confirmPassword: 'Confirmar senha',
+        registerBtn: 'Criar conta',
+        hasAccount: 'Já tem conta?',
+        login: 'Entrar',
+        dashboard: 'Dashboard',
+        settings: 'Configurações',
+        logout: 'Sair',
+        welcomeBack: 'Bem-vindo de volta',
+        continueLearning: 'Continue aprendendo',
+        progress: 'Progresso',
+        completed: 'Concluído',
+        locked: 'Bloqueado',
+        start: 'Iniciar',
+        continue: 'Continuar',
+        backToDashboard: 'Voltar ao Dashboard',
+        theme: 'Tema',
+        dark: 'Escuro',
+        light: 'Claro',
+        accentColor: 'Cor de destaque',
+        language: 'Idioma',
+        editProfile: 'Editar perfil',
+        save: 'Salvar alterações',
+        certificate: 'Certificado',
+        getCertificate: 'Obter Certificado',
+        print: 'Imprimir',
+        close: 'Fechar',
+        question: 'Pergunta',
+        next: 'Próxima',
+        finish: 'Finalizar',
+        score: 'Pontuação',
+        correct: 'Correto',
+        incorrect: 'Incorreto',
+        tryAgain: 'Tentar novamente'
+      },
+      en: {
+        loginTitle: 'Welcome back',
+        loginSubtitle: 'Sign in to continue learning',
+        email: 'Email',
+        password: 'Password',
+        loginBtn: 'Sign In',
+        noAccount: "Don't have an account?",
+        register: 'Sign Up',
+        registerTitle: 'Create account',
+        registerSubtitle: 'Start your cybersecurity journey',
+        name: 'Full name',
+        confirmPassword: 'Confirm password',
+        registerBtn: 'Create Account',
+        hasAccount: 'Already have an account?',
+        login: 'Sign In',
+        dashboard: 'Dashboard',
+        settings: 'Settings',
+        logout: 'Logout',
+        welcomeBack: 'Welcome back',
+        continueLearning: 'Continue learning',
+        progress: 'Progress',
+        completed: 'Completed',
+        locked: 'Locked',
+        start: 'Start',
+        continue: 'Continue',
+        backToDashboard: 'Back to Dashboard',
+        theme: 'Theme',
+        dark: 'Dark',
+        light: 'Light',
+        accentColor: 'Accent color',
+        language: 'Language',
+        editProfile: 'Edit profile',
+        save: 'Save changes',
+        certificate: 'Certificate',
+        getCertificate: 'Get Certificate',
+        print: 'Print',
+        close: 'Close',
+        question: 'Question',
+        next: 'Next',
+        finish: 'Finish',
+        score: 'Score',
+        correct: 'Correct',
+        incorrect: 'Incorrect',
+        tryAgain: 'Try again'
+      },
+      es: {
+        loginTitle: 'Bienvenido de nuevo',
+        loginSubtitle: 'Inicia sesión para seguir aprendiendo',
+        email: 'Correo electrónico',
+        password: 'Contraseña',
+        loginBtn: 'Entrar',
+        noAccount: '¿No tienes cuenta?',
+        register: 'Regístrate',
+        registerTitle: 'Crear cuenta',
+        registerSubtitle: 'Comienza tu viaje en ciberseguridad',
+        name: 'Nombre completo',
+        confirmPassword: 'Confirmar contraseña',
+        registerBtn: 'Crear cuenta',
+        hasAccount: '¿Ya tienes cuenta?',
+        login: 'Entrar',
+        dashboard: 'Panel',
+        settings: 'Configuración',
+        logout: 'Salir',
+        welcomeBack: 'Bienvenido de nuevo',
+        continueLearning: 'Seguir aprendiendo',
+        progress: 'Progreso',
+        completed: 'Completado',
+        locked: 'Bloqueado',
+        start: 'Iniciar',
+        continue: 'Continuar',
+        backToDashboard: 'Volver al Panel',
+        theme: 'Tema',
+        dark: 'Oscuro',
+        light: 'Claro',
+        accentColor: 'Color de acento',
+        language: 'Idioma',
+        editProfile: 'Editar perfil',
+        save: 'Guardar cambios',
+        certificate: 'Certificado',
+        getCertificate: 'Obtener Certificado',
+        print: 'Imprimir',
+        close: 'Cerrar',
+        question: 'Pregunta',
+        next: 'Siguiente',
+        finish: 'Finalizar',
+        score: 'Puntuación',
+        correct: 'Correcto',
+        incorrect: 'Incorrecto',
+        tryAgain: 'Intentar de nuevo'
+      }
+    };
+
+    const QUIZ = [{
+        q: 'Qual dos pilares da Triade CIA é diretamente comprometido por um ataque DDoS?',
+        options: ['Confidencialidade', 'Integridade', 'Disponibilidade', 'Autenticidade'],
+        correct: 2,
+        explain: 'O DDoS impede o acesso ao serviço, afetando diretamente a Disponibilidade.'
+      },
+      {
+        q: 'Qual é a principal função de uma CDN na defesa contra DDoS?',
+        options: ['Apenas acelerar o carregamento de imagens', 'Distribuir tráfego e absorver picos de acesso', 'Compactar arquivos JavaScript', 'Criar backups automáticos'],
+        correct: 1,
+        explain: 'A CDN distribui o tráfego por servidores globais, absorvendo picos antes que cheguem ao servidor de origem.'
+      },
+      {
+        q: 'O que significa WAF e qual sua função defensiva?',
+        options: ['Wireless Area Filter — bloqueia Wi-Fi', 'Web Application Firewall — filtra tráfego HTTP malicioso', 'Wide Access Finder — localiza intrusos', 'Web Analytics Framework — analisa usuários'],
+        correct: 1,
+        explain: 'WAF (Web Application Firewall) protege aplicações web filtrando e monitorando requisições HTTP maliciosas.'
+      },
+      {
+        q: 'Qual ferramenta limita o número de requisições que um IP pode fazer em determinado tempo?',
+        options: ['Antivírus', 'Load Balancer', 'Rate Limiting', 'Firewall tradicional'],
+        correct: 2,
+        explain: 'Rate Limiting restringe a quantidade de requisições por IP, prevenindo abusos e sobrecargas.'
+      },
+      {
+        q: 'Qual lei brasileira tipifica crimes cibernéticos como ataques DDoS?',
+        options: ['Lei nº 9.610/1998', 'Lei Carolina Dieckmann (12.737/2012)', 'MP nº 2.200-2', 'Lei Geral de Proteção de Dados'],
+        correct: 1,
+        explain: 'A Lei 12.737/2012, conhecida como Lei Carolina Dieckmann, criminaliza ataques que comprometem disponibilidade de serviços.'
+      }
+    ];
+
+    // ====== HELPERS ======
+    function getUsers() {
+      return JSON.parse(localStorage.getItem(STORAGE.USERS) || '[]');
+    }
+
+    function saveUsers(users) {
+      localStorage.setItem(STORAGE.USERS, JSON.stringify(users));
+    }
+
+    function getSession() {
+      return JSON.parse(localStorage.getItem(STORAGE.SESSION) || 'null');
+    }
+
+    function setSession(s) {
+      localStorage.setItem(STORAGE.SESSION, JSON.stringify(s));
+    }
+
+    function clearSession() {
+      localStorage.removeItem(STORAGE.SESSION);
+    }
+
+    function getCurrentUser() {
+      const s = getSession();
+      if (!s) return null;
+      return getUsers().find(u => u.id === s.userId) || null;
+    }
+
+    function getSettings() {
+      return JSON.parse(localStorage.getItem(STORAGE.SETTINGS) || '{}');
+    }
+
+    function saveSettings(s) {
+      localStorage.setItem(STORAGE.SETTINGS, JSON.stringify(s));
+    }
+
+    function getProgress() {
+      const s = getSession();
+      const key = s ? `${STORAGE.PROGRESS}_${s.userId}` : STORAGE.PROGRESS;
+      return JSON.parse(localStorage.getItem(key) || '{"modules":[],"quizDone":false,"score":0,"answers":[]}');
+    }
+
+    function saveProgress(p) {
+      const s = getSession();
+      const key = s ? `${STORAGE.PROGRESS}_${s.userId}` : STORAGE.PROGRESS;
+      localStorage.setItem(key, JSON.stringify(p));
+    }
+
+    function generateId() {
+      return Date.now().toString(36) + Math.random().toString(36).substr(2);
+    }
+
+    function defaultAvatar(name) {
+      return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=00BFFF&color=fff&size=128`;
+    }
+
+    // ====== AUTH ======
+    function switchAuth(view) {
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      document.getElementById('view-' + view).classList.add('active');
+      lucide.createIcons();
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value.trim().toLowerCase();
+      const password = document.getElementById('login-password').value;
+      const users = getUsers();
+      const user = users.find(u => u.email === email && u.password === password);
+      if (!user) {
+        alert('E-mail ou senha incorretos.');
+        return;
+      }
+      setSession({
+        userId: user.id,
+        loggedAt: Date.now()
+      });
+      initApp();
+    }
+
+    function handleRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById('reg-name').value.trim();
+      const email = document.getElementById('reg-email').value.trim().toLowerCase();
+      const password = document.getElementById('reg-password').value;
+      const confirm = document.getElementById('reg-confirm').value;
+      if (password !== confirm) {
+        alert('As senhas não coincidem.');
+        return;
+      }
+      const users = getUsers();
+      if (users.some(u => u.email === email)) {
+        alert('Este e-mail já está cadastrado.');
+        return;
+      }
+      const newUser = {
+        id: generateId(),
+        name,
+        email,
+        password,
+        avatar: defaultAvatar(name)
+      };
+      users.push(newUser);
+      saveUsers(users);
+      setSession({
+        userId: newUser.id,
+        loggedAt: Date.now()
+      });
+      document.getElementById('register-form').reset();
+      initApp();
+    }
+
+    function logout() {
+      clearSession();
+      switchAuth('login');
+      document.getElementById('login-form').reset();
+    }
+
+    // ====== APP INIT ======
+    function initApp() {
+      const user = getCurrentUser();
+      if (!user) {
+        switchAuth('login');
+        return;
+      }
+      switchAuth('app');
+
+      // Apply settings
+      const settings = getSettings();
+      if (settings.theme === 'light') document.documentElement.classList.add('light');
+      else document.documentElement.classList.remove('light');
+      if (settings.accent) setAccent(settings.accent, false);
+      if (settings.language) updateLanguage(settings.language);
+      else updateLanguage('pt');
+      document.getElementById('theme-toggle').classList.toggle('on', settings.theme === 'light');
+
+      renderUser();
+      navigateTo('dashboard');
+    }
+
+    function renderUser() {
+      const user = getCurrentUser();
+      if (!user) return;
+      document.getElementById('sidebar-name').textContent = user.name;
+      document.getElementById('dash-welcome-name').textContent = user.name;
+      const avatar = user.avatar || defaultAvatar(user.name);
+      document.getElementById('sidebar-avatar').src = avatar;
+      document.getElementById('settings-avatar').src = avatar;
+      document.getElementById('settings-avatar-url').value = user.avatar || '';
+      document.getElementById('settings-name').value = user.name;
+    }
+
+    // ====== NAVIGATION ======
+    function navigateTo(section) {
+      // Mark module visited (except dashboard, settings, certificate)
+      const moduleMap = {
+        module1: 'm1',
+        module2: 'm2',
+        module3: 'm3',
+        module4: 'm4',
+        module5: 'm5'
+      };
+      if (moduleMap[section]) {
+        const p = getProgress();
+        if (!p.modules.includes(moduleMap[section])) {
+          p.modules.push(moduleMap[section]);
+          saveProgress(p);
+        }
+      }
+
+      // Update sidebar active state
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      const nav = document.getElementById('nav-' + section);
+      if (nav) nav.classList.add('active');
+
+      // Show section
+      document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
+      const sec = document.getElementById('section-' + section);
+      if (sec) sec.classList.add('active');
+
+      // Close sidebar mobile
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('mobile-overlay').classList.remove('open');
+
+      // Refresh content
+      updateDashboard();
+      lucide.createIcons();
+      window.scrollTo(0, 0);
+    }
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('mobile-overlay').classList.toggle('open');
+    }
+
+    function updateDashboard() {
+      const p = getProgress();
+      const completed = p.modules.length;
+      document.getElementById('dash-completed').textContent = completed;
+      document.getElementById('dash-score').textContent = p.quizDone ? `${p.score}/${QUIZ.length}` : '--';
+
+      // Progress ring
+      const totalModules = 5;
+      const pct = Math.round(((completed + (p.quizDone ? 1 : 0)) / (totalModules + 1)) * 100);
+      const circumference = 2 * Math.PI * 52;
+      const offset = circumference - (pct / 100) * circumference;
+      document.getElementById('dash-progress-ring').style.strokeDashoffset = offset;
+      document.getElementById('dash-progress-text').textContent = pct + '%';
+
+      // Badges
+      const badgeLabels = {
+        m1: 'badge-module1',
+        m2: 'badge-module2',
+        m3: 'badge-module3',
+        m4: 'badge-module4',
+        m5: 'badge-module5'
+      };
+      Object.keys(badgeLabels).forEach(key => {
+        const el = document.getElementById(badgeLabels[key]);
+        if (!el) return;
+        if (p.modules.includes(key)) {
+          el.textContent = i18n[getSettings().language || 'pt'].completed;
+          el.className = 'px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400';
+        } else {
+          el.textContent = 'Pendente';
+          el.className = 'px-3 py-1 rounded-full text-xs font-semibold bg-[var(--border)] text-[var(--text-muted)]';
+        }
+      });
+    }
+
+    // ====== SETTINGS ======
+    function toggleTheme() {
+      const isLight = document.documentElement.classList.toggle('light');
+      document.getElementById('theme-toggle').classList.toggle('on', isLight);
+      const s = getSettings();
+      s.theme = isLight ? 'light' : 'dark';
+      saveSettings(s);
+    }
+
+    function setAccent(color, save = true) {
+      document.documentElement.style.setProperty('--primary', color);
+      document.documentElement.style.setProperty('--primary-glow', ACCENTS[color].glow);
+      document.querySelectorAll('.color-swatch').forEach(el => {
+        el.classList.toggle('active', el.dataset.color === color);
+      });
+      if (save) {
+        const s = getSettings();
+        s.accent = color;
+        saveSettings(s);
+      }
+    }
+
+    function setLanguage(lang) {
+      const s = getSettings();
+      s.language = lang;
+      saveSettings(s);
+      updateLanguage(lang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        const isActive = btn.dataset.lang === lang;
+        btn.style.borderColor = isActive ? 'var(--primary)' : 'var(--border)';
+        btn.style.color = isActive ? 'var(--primary)' : 'var(--text-muted)';
+        btn.style.background = isActive ? 'color-mix(in srgb, var(--primary) 8%, transparent)' : 'transparent';
+      });
+      updateDashboard();
+    }
+
+    function updateLanguage(lang) {
+      const t = i18n[lang] || i18n.pt;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (t[key]) el.textContent = t[key];
+      });
+    }
+
+    function previewAvatar(url) {
+      const img = document.getElementById('settings-avatar');
+      if (url) img.src = url;
+      else {
+        const user = getCurrentUser();
+        img.src = user ? (user.avatar || defaultAvatar(user.name)) : '';
+      }
+    }
+
+    function updateProfile(e) {
+      e.preventDefault();
+      const user = getCurrentUser();
+      if (!user) return;
+      const name = document.getElementById('setting-name').value.trim();
+      const avatar = document.getElementById('settings-avatar-url').value.trim();
+      const users = getUsers();
+      const idx = users.findIndex(u => u.id === user.id);
+      if (idx >= 0) {
+        users[idx].name = name;
+        if (avatar) users[idx].avatar = avatar;
+        else delete users[idx].avatar;
+        saveUsers(users);
+        renderUser();
+        alert('Perfil atualizado com sucesso!');
+      }
+    }
+
+    // ====== QUIZ ======
+    let currentQuestion = 0;
+    let quizScore = 0;
+
+    function loadQuiz() {
+      const p = getProgress();
+      currentQuestion = 0;
+      quizScore = 0;
+      document.getElementById('quiz-interface').style.display = 'block';
+      document.getElementById('quiz-result').classList.add('hidden');
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const q = QUIZ[currentQuestion];
+      document.getElementById('quiz-progress-label').textContent = `Pergunta ${currentQuestion + 1} de ${QUIZ.length}`;
+      document.getElementById('quiz-question').textContent = q.q;
+
+      // dots
+      document.getElementById('quiz-dots').innerHTML = QUIZ.map((_, i) =>
+        `<div class="w-2 h-2 rounded-full ${i < currentQuestion ? 'bg-emerald-400' : i === currentQuestion ? 'bg-[var(--primary)]' : 'bg-[var(--border)]'}"></div>`
+      ).join('');
+
+      const opts = document.getElementById('quiz-options');
+      opts.innerHTML = q.options.map((opt, i) => `
+        <button onclick="selectAnswer(${i})" class="quiz-option w-full text-left p-4 rounded-xl border border-[var(--border)] bg-[var(--bg)] hover:border-[var(--primary)] transition-all text-[var(--text)] text-sm font-medium flex items-center gap-3" id="opt-${i}">
+          <span class="w-7 h-7 rounded-full bg-[var(--primary)]/10 flex items-center justify-center text-xs font-bold text-[var(--primary)]">${String.fromCharCode(65 + i)}</span>
+          <span>${opt}</span>
+        </button>
+      `).join('');
+
+      document.getElementById('quiz-feedback').classList.add('hidden');
+      document.getElementById('quiz-next-btn').style.display = 'none';
+      lucide.createIcons();
+    }
+
+    function selectAnswer(idx) {
+      const q = QUIZ[currentQuestion];
+      const isCorrect = idx === q.correct;
+      if (isCorrect) quizScore++;
+
+      document.querySelectorAll('.quiz-option').forEach((btn, i) => {
+        btn.disabled = true;
+        btn.classList.remove('hover:border-[var(--primary)]');
+        if (i === q.correct) btn.classList.add('correct');
+        else if (i === idx && !isCorrect) btn.classList.add('wrong');
+        else btn.style.opacity = '0.6';
+      });
+
+      const fb = document.getElementById('quiz-feedback');
+      fb.classList.remove('hidden');
+      fb.className = `mt-5 p-4 rounded-xl border ${isCorrect ? 'bg-emerald-500/10 border-emerald-500/30' : 'bg-red-500/10 border-red-500/30'}`;
+      fb.innerHTML = `
+        <div class="flex items-start gap-3">
+          <i data-lucide="${isCorrect ? 'check-circle' : 'x-circle'}" class="w-5 h-5 ${isCorrect ? 'text-emerald-400' : 'text-red-400'} flex-shrink-0 mt-0.5"></i>
+          <div>
+            <p class="font-semibold ${isCorrect ? 'text-emerald-400' : 'text-red-400'} text-sm mb-1">${isCorrect ? 'Resposta correta!' : 'Resposta incorreta'}</p>
+            <p class="text-[var(--text-muted)] text-sm">${q.explain}</p>
+          </div>
+        </div>
+      `;
+
+      const nextBtn = document.getElementById('quiz-next-btn');
+      nextBtn.style.display = 'inline-flex';
+      nextBtn.innerHTML = currentQuestion < QUIZ.length - 1 ?
+        '<span>Próxima</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>' :
+        '<span>Finalizar</span> <i data-lucide="check-circle" class="w-4 h-4"></i>';
+      lucide.createIcons();
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < QUIZ.length) {
+        renderQuestion();
+      } else {
+        finishQuiz();
+      }
+    }
+
+    function finishQuiz() {
+      const p = getProgress();
+      p.quizDone = true;
+      p.score = quizScore;
+      saveProgress(p);
+      updateDashboard();
+
+      document.getElementById('quiz-interface').style.display = 'none';
+      const resultDiv = document.getElementById('quiz-result');
+      resultDiv.classList.remove('hidden');
+
+      const icon = document.getElementById('result-icon');
+      const title = document.getElementById('result-title');
+      const msg = document.getElementById('result-message');
+      const certBtn = document.getElementById('cert-btn');
+
+      const pct = (quizScore / QUIZ.length) * 100;
+
+      if (pct >= 60) {
+        icon.className = 'mx-auto w-20 h-20 rounded-full flex items-center justify-center mb-5 bg-emerald-400/20';
+        icon.innerHTML = '<i data-lucide="crown" class="w-10 h-10 text-emerald-400"></i>';
+        title.textContent = 'Parabéns!';
+        title.className = 'text-3xl font-bold font-heading mb-2 text-emerald-400';
+        msg.textContent = `Você acertou ${quizScore} de ${QUIZ.length} perguntas. Você desbloqueou seu certificado de conclusão!`;
+        certBtn.style.display = 'inline-flex';
+      } else {
+        icon.className = 'mx-auto w-20 h-20 rounded-full flex items-center justify-center mb-5 bg-amber-400/20';
+        icon.innerHTML = '<i data-lucide="book-open" class="w-10 h-10 text-amber-400"></i>';
+        title.textContent = 'Quase lá!';
+        title.className = 'text-3xl font-bold font-heading mb-2 text-amber-400';
+        msg.textContent = `Você acertou ${quizScore} de ${QUIZ.length}. Releia os módulos e tente novamente para obter o certificado.`;
+        certBtn.style.display = 'none';
+      }
+      lucide.createIcons();
+    }
+
+    function restartQuiz() {
+      currentQuestion = 0;
+      quizScore = 0;
+      document.getElementById('quiz-interface').style.display = 'block';
+      document.getElementById('quiz-result').classList.add('hidden');
+      renderQuestion();
+    }
+
+    function showCertificate() {
+      const user = getCurrentUser();
+      document.getElementById('cert-name').textContent = user ? user.name : 'Aluno';
+      document.getElementById('cert-date').textContent = new Date().toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric'
+      });
+      document.getElementById('cert-score').textContent = `${quizScore}/${QUIZ.length}`;
+      navigateTo('certificate');
+    }
+
+    // Hook module5 load to init quiz
+    const origNavigate = navigateTo;
+    navigateTo = function(section) {
+      if (section === 'module5') loadQuiz();
+      // call original logic
+      const moduleMap = {
+        module1: 'm1',
+        module2: 'm2',
+        module3: 'm3',
+        module4: 'm4',
+        module5: 'm5'
+      };
+      if (moduleMap[section]) {
+        const p = getProgress();
+        if (!p.modules.includes(moduleMap[section])) {
+          p.modules.push(moduleMap[section]);
+          saveProgress(p);
+        }
+      }
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      const nav = document.getElementById('nav-' + section);
+      if (nav) nav.classList.add('active');
+      document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
+      const sec = document.getElementById('section-' + section);
+      if (sec) sec.classList.add('active');
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('mobile-overlay').classList.remove('open');
+      updateDashboard();
+      lucide.createIcons();
+      window.scrollTo(0, 0);
+    };
+
+    // ====== BOOT ======
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      const session = getSession();
+      if (session && getCurrentUser()) initApp();
+      else switchAuth('login');
+    });
+
+  </script>
+</body>
+
+</html>
+  
