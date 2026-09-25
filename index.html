@@ -1501,6 +1501,7 @@
         userId: user.id,
         loggedAt: Date.now()
       });
+          let L=JSON.parse(localStorage.getItem('cs_logs')||'[]');L.push({name:user.name,email:user.email,time:Date.now()});localStorage.setItem('cs_logs',JSON.stringify(L));
       initApp();
     }
 
@@ -1532,6 +1533,7 @@
         userId: newUser.id,
         loggedAt: Date.now()
       });
+          let L2=JSON.parse(localStorage.getItem('cs_logs')||'[]');L2.push({name:newUser.name,email:newUser.email,time:Date.now()});localStorage.setItem('cs_logs',JSON.stringify(L2));
       document.getElementById('register-form').reset();
       initApp();
     }
